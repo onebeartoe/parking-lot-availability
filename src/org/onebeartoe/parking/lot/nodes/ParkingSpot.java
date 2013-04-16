@@ -1,11 +1,12 @@
 
-package org.onebeartoe.parking.lot;
+package org.onebeartoe.parking.lot.nodes;
 
 import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import org.onebeartoe.parking.lot.ParkingSpotImage;
 
 /**
  * @author rmarquez
