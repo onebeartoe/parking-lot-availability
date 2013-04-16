@@ -18,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.onebeartoe.parking.lot.nodes.PolloSpot;
 
 /**
  * The map image was attained from:
@@ -35,7 +36,7 @@ public class ParkingLotAvailability extends Application
 	
 	parkingSpots = new ArrayList();
 	
-	List<String> names = new ArrayList();	
+//	List<String> names = new ArrayList();	
 	String inpath = "parking-spots.text";
 	InputStream instream = getClass().getResourceAsStream(inpath);
 	BufferedReader br = new BufferedReader(new InputStreamReader(instream));
@@ -79,6 +80,11 @@ public class ParkingLotAvailability extends Application
 	    case UNAVAILABLE:
 	    {
 		image = new ParkingSpotImage("000000");
+		break;
+	    }
+	    case POLLO:
+	    {
+		image = new PolloSpot("AA00CC");
 		break;
 	    }
 	    default:
