@@ -17,7 +17,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import org.onebeartoe.parking.lot.nodes.ParkingSpot;
 import org.onebeartoe.parking.lot.nodes.PolloSpot;
 
 /**
@@ -31,12 +33,9 @@ public class ParkingLotAvailability extends Application
     private List<ParkingSpot> parkingSpots;   
     
     public ParkingLotAvailability()
-    {
-	System.out.println("one");
-	
+    {	
 	parkingSpots = new ArrayList();
 	
-//	List<String> names = new ArrayList();	
 	String inpath = "parking-spots.text";
 	InputStream instream = getClass().getResourceAsStream(inpath);
 	BufferedReader br = new BufferedReader(new InputStreamReader(instream));
@@ -60,6 +59,15 @@ public class ParkingLotAvailability extends Application
 	{
 	    Logger.getLogger(ParkingLotAvailability.class.getName()).log(Level.SEVERE, null, ex);
 	}
+    }
+    
+    private Node constructLegend()
+    {
+	Rectangle legendBackground = new Rectangle(200, 200);
+	
+	Node legend = null;
+	
+	return legend;
     }
     
     private ParkingSpotImage imageFor(Classification classification)
@@ -140,12 +148,15 @@ public class ParkingLotAvailability extends Application
         
         Group root = new Group();
 	ObservableList<Node> rootChildren = root.getChildren();
-        root.getChildren().add(vBox);        
+        rootChildren.add(vBox);        
 	
 	for(ParkingSpot spot : parkingSpots)
 	{
 	    rootChildren.add(spot);
 	}
+	
+	Node legend = constructLegend();
+	rootChildren.add(legend);
 	
         Scene scene = new Scene(root);        
         primaryStage.setScene(scene);
