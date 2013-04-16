@@ -8,7 +8,8 @@ public enum Classification
 {
     AVAILABLE("available.png"),
     TAKEN("taken.png"),
-    UNAVAILABLE("unavailable.png");
+    UNAVAILABLE("unavailable.png"),
+    POLLO("");
             
     public String imagePath;
     

@@ -3,10 +3,9 @@ package org.onebeartoe.parking.lot;
 
 import javafx.scene.Group;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 /**
  * @author rmarquez
@@ -20,7 +19,8 @@ public class ParkingSpot extends Group
 	setLayoutY(y);
 		
 	Label label = new Label(text);   
-	Font font = new Font(14);
+	Font font = Font.font("Verdana", FontWeight.BOLD, 15);
+//	Font font = new Font(14);
 	label.setFont(font);
 	HBox vbox = new HBox(5);
 	vbox.getChildren().add(image);

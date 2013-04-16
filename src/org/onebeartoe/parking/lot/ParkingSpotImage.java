@@ -13,7 +13,8 @@ public class ParkingSpotImage extends Group
     
     public ParkingSpotImage(String hexColor)
     {	
-	Circle c = new Circle(5, Color.web(hexColor) );
+	Color color = Color.web(hexColor);
+	Circle c = new Circle(5, color);
 			
 	getChildren().add(c);
     }
