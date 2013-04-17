@@ -17,8 +17,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import org.onebeartoe.parking.lot.nodes.MapLegend;
+import org.onebeartoe.parking.lot.nodes.MapNoteImage;
 import org.onebeartoe.parking.lot.nodes.ParkingSpot;
 import org.onebeartoe.parking.lot.nodes.PolloSpot;
 
@@ -32,9 +33,11 @@ public class ParkingLotAvailability extends Application
     
     private List<ParkingSpot> parkingSpots;   
     
+    Node legend;
+    
     public ParkingLotAvailability()
     {	
-	parkingSpots = new ArrayList();
+	parkingSpots = new ArrayList();		
 	
 	String inpath = "parking-spots.text";
 	InputStream instream = getClass().getResourceAsStream(inpath);
@@ -61,15 +64,6 @@ public class ParkingLotAvailability extends Application
 	}
     }
     
-    private Node constructLegend()
-    {
-	Rectangle legendBackground = new Rectangle(200, 200);
-	
-	Node legend = null;
-	
-	return legend;
-    }
-    
     private ParkingSpotImage imageFor(Classification classification)
     {
 	ParkingSpotImage image = null;
@@ -94,6 +88,11 @@ public class ParkingLotAvailability extends Application
 	    {
 		image = new PolloSpot("AA00CC");
 		break;
+	    }		
+	    case MAP_NOTE:
+	    {
+		image = new MapNoteImage("AA00CC");
+		break;
 	    }
 	    default:
 	    {
@@ -104,6 +103,11 @@ public class ParkingLotAvailability extends Application
 	return image;
     }
     
+    public static void main(String[] args) 
+    {
+        launch(args);
+    }
+	
     private void parseLine(String line)
     {
 	String [] strings = line.split(",");		
@@ -120,12 +124,26 @@ public class ParkingLotAvailability extends Application
 
 		String s = strings[2].trim();
 		Classification classification = Classification.valueOf(s);
-		ParkingSpotImage image = imageFor(classification);
+		
 		String label = strings[3].trim();
+		
+		switch(classification)
+		{
+		    case MAP_LEGEND:
+		    {
+			legend = new MapLegend(x, y, label);
+			
+			break;
+		    }
+		    default:
+		    {
+			ParkingSpotImage image = imageFor(classification);			
 
-		ParkingSpot ps = new ParkingSpot(x, y, image, label);
+			ParkingSpot ps = new ParkingSpot(x, y, image, label);
 
-		parkingSpots.add(ps);
+			parkingSpots.add(ps);
+		    }
+		}
 	    }
 	}
 	catch(Exception e)
@@ -137,9 +155,7 @@ public class ParkingLotAvailability extends Application
     
     @Override
     public void start(Stage primaryStage) 
-    {   
-	System.out.println("two");
-
+    {
 	InputStream instream = ParkingLotAvailability.class.getResourceAsStream("parking-lot.png");
 	Image image = new Image(instream);
 	ImageView mapView = new ImageView(image);	
@@ -149,14 +165,16 @@ public class ParkingLotAvailability extends Application
         Group root = new Group();
 	ObservableList<Node> rootChildren = root.getChildren();
         rootChildren.add(vBox);        
+
+	if(legend != null)
+	{
+	    rootChildren.add(legend);
+	}	
 	
 	for(ParkingSpot spot : parkingSpots)
 	{
 	    rootChildren.add(spot);
 	}
-	
-	Node legend = constructLegend();
-	rootChildren.add(legend);
 	
         Scene scene = new Scene(root);        
         primaryStage.setScene(scene);
@@ -164,10 +182,5 @@ public class ParkingLotAvailability extends Application
         primaryStage.setTitle("Holy Cross H. S. Parking Lot");        
         primaryStage.show();
     }
-    
-    public static void main(String[] args) 
-    {
-        launch(args);
-    }
-    
+        
 }
