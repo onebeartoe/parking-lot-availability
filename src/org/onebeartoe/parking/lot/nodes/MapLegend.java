@@ -30,7 +30,8 @@ public class MapLegend extends Group
 	Label label = new Label(heading);   
 	Font font = Font.font("Verdana", FontWeight.BOLD, 13);
 	label.setFont(font);
-	label.setLayoutX(30);
+	label.setLayoutX(55);
+	label.setLayoutY(1);
 	
 	ObservableList<Node> children = getChildren();
 	children.add(legendBackground);

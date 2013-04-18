@@ -20,17 +20,19 @@ public class PolloSpot extends ParkingSpotImage
 
 	ObservableList<Node> children = getChildren();
 	children.removeAll(children);	
-	
+
+/*	
 	Rectangle feet = new Rectangle(2,4);
 	feet.setFill(Color.ORANGE);
-//	feet.setX(2);
 	feet.setY(4);
+*/	
 	
 	Circle body = new Circle(4.5);
 	body.setFill(Color.YELLOW);
 	body.setStroke(Color.BLACK);
 	body.setStrokeWidth(0.5);
-	
+
+/*	
 	Circle head = new Circle(2.5);
 	head.setCenterX(4);
 	head.setCenterY(-2);
@@ -42,11 +44,12 @@ public class PolloSpot extends ParkingSpotImage
 	beak.setFill(Color.ORANGE);
 	beak.setX(5);
 	beak.setY(-3);
+*/		
 		
-	children.add(feet);
+//	children.add(feet);
 	children.add(body);	
-	children.add(head);	
-	children.add(beak);
+//	children.add(head);	
+//	children.add(beak);
     }    
     
 }

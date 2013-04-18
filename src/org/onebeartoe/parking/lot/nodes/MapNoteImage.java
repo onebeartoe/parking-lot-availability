@@ -6,7 +6,7 @@ import javafx.scene.Node;
 import org.onebeartoe.parking.lot.ParkingSpotImage;
 
 /**
- * This is used to show no image/icon.
+ * This is used to have a parking spot entry with no image/icon.
  * @author rmarquez
  */
 public class MapNoteImage extends ParkingSpotImage
