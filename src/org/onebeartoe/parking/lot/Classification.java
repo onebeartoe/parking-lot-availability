@@ -6,18 +6,10 @@ package org.onebeartoe.parking.lot;
  */
 public enum Classification 
 {
-    AVAILABLE("available.png"),
-    TAKEN("taken.png"),
-    UNAVAILABLE("unavailable.png"),
-    POLLO(""),
-    MAP_LEGEND(""),
-    MAP_NOTE("");
-            
-    public String imagePath;
-    
-    Classification(String imagePath)
-    {
-	this.imagePath = imagePath;		
-    }
-    
+    AVAILABLE,
+    TAKEN,
+    UNAVAILABLE,
+    POLLO,
+    MAP_LEGEND,
+    MAP_NOTE;
 }
