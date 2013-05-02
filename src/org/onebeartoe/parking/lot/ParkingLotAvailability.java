@@ -48,7 +48,9 @@ public class ParkingLotAvailability extends Application
     
     private List<ParkingSpot> parkingSpots;   
     
-    Node legend;
+    private Node legend;
+    
+    private ImageView mapView;
     
     public ParkingLotAvailability()
     {	
@@ -178,34 +180,11 @@ public class ParkingLotAvailability extends Application
     {
 	InputStream instream = ParkingLotAvailability.class.getResourceAsStream("parking-lot.png");
 	Image image = new Image(instream);
-	final ImageView mapView = new ImageView(image);	
+	mapView = new ImageView(image);
+//	final ImageView mapView = new ImageView(image);
 	
 	Button selectMapButton = new Button("Select Map");
-	selectMapButton.setOnMouseClicked( new EventHandler<MouseEvent>() 
-	    {
-		@Override
-		public void handle(MouseEvent t)
-		{
-    //		preferences.put
-		    
-		    
-		    // this is for the screen grap of the map with identifiers
-		    WritableImage image = mapView.snapshot(new SnapshotParameters(), null);
-		    BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
-		    File outfile = new File("map.png");
-
-		    try 
-		    {
-			System.out.println("outptuing to : " + outfile.getAbsolutePath() );
-			ImageIO.write(bufferedImage, "png", outfile);
-		    } 
-		    catch (IOException ex) 
-		    {
-			Logger.getLogger(ParkingLotAvailability.class.getName()).log(Level.SEVERE, null, ex);
-		    }
-		}
-	    }
-	);
+	selectMapButton.setOnMouseClicked( new SelectMapHandler() );
 	TextField mapField = new TextField();
 	BorderPane mapPane = new BorderPane();
 	mapPane.setCenter(mapField);
@@ -238,6 +217,30 @@ public class ParkingLotAvailability extends Application
 	
         primaryStage.setTitle("Holy Cross H. S. Parking Lot");        
         primaryStage.show();
+    }
+    
+    private class SelectMapHandler implements EventHandler<MouseEvent>
+    {
+	@Override
+	public void handle(MouseEvent t)
+	{
+//		preferences.put
+	    
+	    // this is for the screen grap of the map with identifiers
+	    WritableImage image = mapView.snapshot(new SnapshotParameters(), null);
+	    BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
+	    File outfile = new File("map.png");
+
+	    try 
+	    {
+		System.out.println("outptuing to : " + outfile.getAbsolutePath() );
+		ImageIO.write(bufferedImage, "png", outfile);
+	    } 
+	    catch (IOException ex) 
+	    {
+		Logger.getLogger(ParkingLotAvailability.class.getName()).log(Level.SEVERE, null, ex);
+	    }
+	}
     }
         
 }
