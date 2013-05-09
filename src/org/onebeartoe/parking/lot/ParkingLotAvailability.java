@@ -178,7 +178,10 @@ public class ParkingLotAvailability extends Application
     @Override
     public void start(Stage primaryStage)
     {
-	InputStream instream = ParkingLotAvailability.class.getResourceAsStream("parking-lot.png");
+	String mapPath = "images/football-field.png";
+//	String mapPath = "images/parking-lot.png";
+	
+	InputStream instream = ParkingLotAvailability.class.getResourceAsStream(mapPath);
 	Image image = new Image(instream);
 	mapView = new ImageView(image);
 //	final ImageView mapView = new ImageView(image);
