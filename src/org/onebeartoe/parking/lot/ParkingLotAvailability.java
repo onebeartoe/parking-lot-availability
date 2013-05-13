@@ -35,11 +35,6 @@ import org.onebeartoe.mapster.factories.MapItemFactory;
 import org.onebeartoe.mapster.factories.MapItemFactoryManager;
 import org.onebeartoe.mapster.items.MapItem;
 
-import org.onebeartoe.parking.lot.nodes.MapLegend;
-import org.onebeartoe.parking.lot.nodes.MapNoteImage;
-import org.onebeartoe.parking.lot.nodes.ParkingSpot;
-import org.onebeartoe.parking.lot.nodes.PolloSpot;
-
 /**
  * The map image was attained from:
  *	"https://maps.google.com/maps?q=Holy+Cross+High+School,+North+San+Felipe+Avenue,+San+Antonio,+TX&hl=en&ll=29.441064,-98.556982&spn=0.001168,0.00142&sll=29.441709,-98.556182&sspn=0.013211,0.022724&oq=holy+cross+high+san+antonio&hq=Holy+Cross+High+School,&hnear=N+San+Felipe+Ave,+San+Antonio,+Bexar,+Texas&t=h&z=20&layer=t"

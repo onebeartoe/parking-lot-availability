@@ -8,8 +8,9 @@ import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.onebeartoe.mapster.items.MapItem;
+import org.onebeartoe.mapster.items.MapNote;
 import org.onebeartoe.parking.lot.Classification;
-import org.onebeartoe.parking.lot.nodes.MapNoteImage;
+
 
 /**
  *
@@ -23,7 +24,7 @@ public class MapNoteFactory extends MapItemFactory
     {
 	String label = strings[3].trim();
 	Node image = new Circle(3, Color.BLACK);
-	MapItem legend = new MapNoteImage(image, label);
+	MapItem legend = new MapNote(image, label);
 		
 	return legend;
     }
