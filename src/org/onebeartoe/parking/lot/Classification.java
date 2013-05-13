@@ -6,10 +6,8 @@ package org.onebeartoe.parking.lot;
  */
 public enum Classification 
 {
-    AVAILABLE,
-    TAKEN,
-    UNAVAILABLE,
-    POLLO,
+    
     MAP_LEGEND,
-    MAP_NOTE;
+    MAP_NOTE,
+    PARKING_SPOT
 }

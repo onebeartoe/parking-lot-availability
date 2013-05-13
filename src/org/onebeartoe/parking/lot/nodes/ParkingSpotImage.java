@@ -1,14 +1,14 @@
 
-package org.onebeartoe.parking.lot;
+package org.onebeartoe.parking.lot.nodes;
 
-import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import org.onebeartoe.mapster.items.MapItem;
 
 /**
  * @author rmarquez
  */
-public class ParkingSpotImage extends Group
+public class ParkingSpotImage extends MapItem
 {
     
     public ParkingSpotImage(String hexColor)

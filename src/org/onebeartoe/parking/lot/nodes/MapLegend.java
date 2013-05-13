@@ -2,23 +2,23 @@
 package org.onebeartoe.parking.lot.nodes;
 
 import javafx.collections.ObservableList;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import org.onebeartoe.mapster.items.MapItem;
 
 /**
  * @author rmarquez
  */
-public class MapLegend extends Group
+public class MapLegend extends MapItem
 {
-    public MapLegend(int x , int y, String heading)
+    public MapLegend(String heading)
     {
-	setLayoutX(x);
-	setLayoutY(y);
+//	setLayoutX(location.x);
+//	setLayoutY(location.y);
 
 	int width = 340;
 	int height = 95;

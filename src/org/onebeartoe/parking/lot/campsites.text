@@ -1,0 +1,10 @@
+
+# map legend
+PARKING_SPOT, 657,  43, AVAILABLE,   Available
+PARKING_SPOT, 657,  63, TAKEN,       Taken
+PARKING_SPOT, 657,  83, UNAVAILABLE, Unavailable
+PARKING_SPOT, 657, 103, POLLO,       Pollo's Space
+
+MAP_LEGEND,  165,  625, Holy Cross Alumni Association
+MAP_NOTE,    470,   55, $75 - Sections 1 - 5
+MAP_NOTE,    470,   82, $50 - Sections 6 - 9

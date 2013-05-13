@@ -5,8 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import org.onebeartoe.parking.lot.ParkingSpotImage;
 
 /**
  * @author rmarquez

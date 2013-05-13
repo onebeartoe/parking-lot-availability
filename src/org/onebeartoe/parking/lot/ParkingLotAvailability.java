@@ -30,6 +30,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import org.onebeartoe.mapster.factories.HardCodedMapItemFactoryManager;
+import org.onebeartoe.mapster.factories.MapItemFactory;
+import org.onebeartoe.mapster.factories.MapItemFactoryManager;
+import org.onebeartoe.mapster.items.MapItem;
 
 import org.onebeartoe.parking.lot.nodes.MapLegend;
 import org.onebeartoe.parking.lot.nodes.MapNoteImage;
@@ -46,11 +50,13 @@ public class ParkingLotAvailability extends Application
     
     private Preferences preferences;
     
-    private List<ParkingSpot> parkingSpots;   
+    private List<MapItem> parkingSpots;   
     
     private Node legend;
     
     private ImageView mapView;
+    
+    private MapItemFactoryManager factoryManager;
     
     public ParkingLotAvailability()
     {	
@@ -59,7 +65,11 @@ public class ParkingLotAvailability extends Application
 	Class clazz = getClass();
 	preferences = Preferences.userNodeForPackage(clazz);
 	
-	String defaultPath = "parking-spots.text";
+	factoryManager = new HardCodedMapItemFactoryManager();
+	
+	String defaultPath = "campsites.text";
+//	String defaultPath = "parking-spots.text";
+	
 	String inpath = preferences.get("parking-spots-path", defaultPath);	
 	
 	InputStream instream = getClass().getResourceAsStream(inpath);
@@ -86,45 +96,6 @@ public class ParkingLotAvailability extends Application
 	}
     }
     
-    private ParkingSpotImage imageFor(Classification classification)
-    {
-	ParkingSpotImage image = null;
-	switch(classification)
-	{
-	    case AVAILABLE:
-	    {
-		image = new ParkingSpotImage("00ff00");
-		break;
-	    }
-	    case TAKEN:
-	    {
-		image = new ParkingSpotImage("A8A8A8");
-		break;
-	    }
-	    case UNAVAILABLE:
-	    {
-		image = new ParkingSpotImage("000000");
-		break;
-	    }
-	    case POLLO:
-	    {
-		image = new PolloSpot("AA00CC");
-		break;
-	    }		
-	    case MAP_NOTE:
-	    {
-		image = new MapNoteImage("AA00CC");
-		break;
-	    }
-	    default:
-	    {
-		image = new ParkingSpotImage("aa33bb");
-	    }
-	}
-	
-	return image;
-    }
-    
     public static void main(String[] args) 
     {
         launch(args);
@@ -135,50 +106,24 @@ public class ParkingLotAvailability extends Application
 	String [] strings = line.split(",");		
 	try
 	{
-	    if(strings.length != 4)
-	    {
-		throw new Exception("Four arguemnts are needed, no more no less.");
-	    }
-	    else
-	    {
-		int x = Integer.valueOf( strings[0].trim() );
-		int y = Integer.valueOf( strings[1].trim() );
+	    String s = strings[0].trim();
+	    Classification classification = Classification.valueOf(s);
+	    MapItemFactory itemFactory = factoryManager.factoryFor(classification);
+	    MapItem item = itemFactory.parse(classification, strings);
 
-		String s = strings[2].trim();
-		Classification classification = Classification.valueOf(s);
-		
-		String label = strings[3].trim();
-		
-		switch(classification)
-		{
-		    case MAP_LEGEND:
-		    {
-			legend = new MapLegend(x, y, label);
-			
-			break;
-		    }
-		    default:
-		    {
-			ParkingSpotImage image = imageFor(classification);			
-
-			ParkingSpot ps = new ParkingSpot(x, y, image, label);
-
-			parkingSpots.add(ps);
-		    }
-		}
-	    }
+	    parkingSpots.add(item);
 	}
 	catch(Exception e)
 	{
 	    System.err.println("An error occured while trying to parse: " + line);
-	    e.printStackTrace();;
+	    e.printStackTrace();
 	}
     }
     
     @Override
     public void start(Stage primaryStage)
     {
-	String mapPath = "images/football-field.png";
+	String mapPath = "images/football-field-rotated.png";
 //	String mapPath = "images/parking-lot.png";
 	
 	InputStream instream = ParkingLotAvailability.class.getResourceAsStream(mapPath);
@@ -210,7 +155,7 @@ public class ParkingLotAvailability extends Application
 	    rootChildren.add(legend);
 	}	
 	
-	for(ParkingSpot spot : parkingSpots)
+	for(MapItem spot : parkingSpots)
 	{
 	    rootChildren.add(spot);
 	}
