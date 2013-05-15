@@ -17,9 +17,11 @@ public class HardCodedMapItemFactoryManager implements MapItemFactoryManager
     {
 	factories = new HashMap();
 	
-	factories.put(Classification.PARKING_SPOT, new ParkingSpotFactory() );
+	factories.put(Classification.AREA, new AreaFactory() );
+	factories.put(Classification.LABEL, new LabelFactory() );
 	factories.put(Classification.MAP_LEGEND, new MapLegendFactory() );
 	factories.put(Classification.MAP_NOTE, new MapNoteFactory() );
+	factories.put(Classification.PARKING_SPOT, new ParkingSpotFactory() );
     }
 
     @Override
@@ -29,7 +31,7 @@ public class HardCodedMapItemFactoryManager implements MapItemFactoryManager
 	
 	if(factory == null)
 	{
-	    throw new UnsupportedOperationException("Not supported yet.");
+	    throw new UnsupportedOperationException("No known factory exists for " + itemType + ".");
 	}
 	
 	return factory;

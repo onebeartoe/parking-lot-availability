@@ -19,9 +19,7 @@ public class MapLegendFactory extends MapItemFactory
 	
 	MapItem legend = new MapLegend(label);
 		
-	return legend;
-	
-	
+	return legend;		
     }
     
 }

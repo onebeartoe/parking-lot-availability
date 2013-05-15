@@ -16,7 +16,7 @@ public class ParkingSpotFactory extends MapItemFactory
 
     public ParkingSpotFactory() 
     {
-	parameterCount = 5;
+	minimumColumnCount = 5;
     }    
 
     private ParkingSpotImage imageFor(ParkingSpotClassification classification)

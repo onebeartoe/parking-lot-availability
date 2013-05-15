@@ -6,7 +6,8 @@ package org.onebeartoe.parking.lot;
  */
 public enum Classification 
 {
-    
+    AREA,
+    LABEL,
     MAP_LEGEND,
     MAP_NOTE,
     PARKING_SPOT

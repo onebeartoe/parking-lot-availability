@@ -14,11 +14,7 @@ import org.onebeartoe.mapster.items.MapItem;
 public class ParkingSpot extends MapItem
 {
     public ParkingSpot(Node image, String text)  
-//    public ParkingSpot(ParkingSpotImage image, String text)
-    {
-//	setLayoutX(location.x);
-//	setLayoutY(location.y);
-		
+    {	
 	Label label = new Label(text);   
 	Font font = Font.font("Verdana", FontWeight.BOLD, 15);
 	label.setFont(font);

@@ -15,9 +15,7 @@ public abstract class MapItemFactory
     /**
      * Set this value in sub-classes.
      */
-    protected int parameterCount = 4;
-        
-    
+    protected int minimumColumnCount = 4;    
     
     public MapItem parse(Classification classification, String [] strings) throws Exception
     {
@@ -32,9 +30,9 @@ public abstract class MapItemFactory
      
     public void checkParameterLength(String [] strings) throws Exception 
     {
-	if(strings.length != parameterCount)
+	if(strings.length != minimumColumnCount)
 	{
-	    throw new Exception(parameterCount + " arguemnts are needed, no more no less.");
+	    throw new Exception(minimumColumnCount + " arguemnts are needed, no more no less.");
 	}
     }
     

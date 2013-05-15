@@ -45,7 +45,7 @@ public class ParkingLotAvailability extends Application
     
     private Preferences preferences;
     
-    private List<MapItem> parkingSpots;   
+    private List<MapItem> mapItems;   
     
     private Node legend;
     
@@ -55,7 +55,7 @@ public class ParkingLotAvailability extends Application
     
     public ParkingLotAvailability()
     {	
-	parkingSpots = new ArrayList();
+	mapItems = new ArrayList();
 	
 	Class clazz = getClass();
 	preferences = Preferences.userNodeForPackage(clazz);
@@ -106,7 +106,7 @@ public class ParkingLotAvailability extends Application
 	    MapItemFactory itemFactory = factoryManager.factoryFor(classification);
 	    MapItem item = itemFactory.parse(classification, strings);
 
-	    parkingSpots.add(item);
+	    mapItems.add(item);
 	}
 	catch(Exception e)
 	{
@@ -124,7 +124,6 @@ public class ParkingLotAvailability extends Application
 	InputStream instream = ParkingLotAvailability.class.getResourceAsStream(mapPath);
 	Image image = new Image(instream);
 	mapView = new ImageView(image);
-//	final ImageView mapView = new ImageView(image);
 	
 	Button selectMapButton = new Button("Select Map");
 	selectMapButton.setOnMouseClicked( new SelectMapHandler() );
@@ -150,7 +149,7 @@ public class ParkingLotAvailability extends Application
 	    rootChildren.add(legend);
 	}	
 	
-	for(MapItem spot : parkingSpots)
+	for(MapItem spot : mapItems)
 	{
 	    rootChildren.add(spot);
 	}
