@@ -27,15 +27,15 @@ public class MapLegend extends MapItem
 	legendBackground.setFill(Color.BEIGE);
 	legendBackground.setStroke(Color.BLACK);
 	
-	Label label = new Label(heading);   
-	Font font = Font.font("Verdana", FontWeight.BOLD, 13);
-	label.setFont(font);
-	label.setLayoutX(55);
-	label.setLayoutY(1);
+//	Label label = new Label(heading);   
+//	Font font = Font.font("Verdana", FontWeight.BOLD, 13);
+//	label.setFont(font);
+//	label.setLayoutX(55);
+//	label.setLayoutY(1);
 	
 	ObservableList<Node> children = getChildren();
 	children.add(legendBackground);
-	children.add(label);
+//	children.add(label);
     }
     
 }

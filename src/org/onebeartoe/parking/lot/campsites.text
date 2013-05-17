@@ -1,20 +1,20 @@
 
 # campsites
 AREA,	985,	425,	gold,	2013,	 47, 60
+AREA,	982,	250,	gold,	2011,	 47, 50
 AREA,	932,	173,	gold,	2010,	 47, 60
 AREA,	882,	169,	gold,	2009,	 47, 60
 AREA,	635,	148,	gold,	2008,	 49, 60
-AREA,	410,	514,	gold,	2007,	 49, 50
-AREA,	307,	385,	gold,	2006,	 49, 45
+AREA,	323,	365,	gold,	2007,	 49, 50
+AREA,	385,	362,	gold,	2006,	 49, 45
 AREA,	833,	538,	gold,	2005,	 47, 60
-AREA,	982,	176,	gold,	2004,	 47, 60
-AREA,	935,	515,	gold,	2003,	 47, 60
-AREA,	307,	328,	gold,	2001,	 49, 45
+AREA,	885,	515,	gold,	2004,	 47, 60
+AREA,	513,	217,	gold,	2001,	 49, 45
 AREA,	991,	361,	gold,	2000,	 65, 24
-AREA,	833,	650,	gold,	1999,	 60, 40
+AREA,	935,	515,	gold,	1999,	 47, 60
 AREA,	735,	154,	gold,	1998,	 47, 60
-AREA,	337,	625,	gold,	1997,	135, 60
-AREA,	485,	455,	gold,	1996,	 49, 50
+AREA,	337,	625,	gold,	1997,	140, 60
+AREA,	536,	519,	gold,	1996,	 47, 55
 AREA,	710,	362,	gold,	1995,	 48, 60
 AREA,	307,	250,	gold,	1994,	 49, 45
 AREA,	410,	459,	gold,	1993,	 49, 45
@@ -25,7 +25,7 @@ AREA,	584,	147,	gold,	1988,	 49, 60
 AREA,	483,	140,	gold,	1987,	 49, 60
 AREA,	533,	145,	gold,	1986,	 49, 60
 AREA,	307,	195,	gold,	1985,	 49, 45
-AREA,	585,	520,	gold,	1984,	 49, 60
+AREA,	585,	520,	gold,	1984,	 49, 55
 AREA,	734,	440,	gold,	1982,	 51, 85
 AREA,	485,	514,	gold,	    ,	 49, 60
 LABEL,	488,	529,		1981
@@ -34,12 +34,14 @@ AREA,	205,	145,	gold,	1980,	 49, 45
 AREA,	410,	410,	gold,	1979,	 49, 45
 AREA,	410,	205,	gold,	1978,	 49, 45
 AREA,	432,	300,	gold,	1977,	 44, 45
+AREA,	557,	365,	gold,	1976,	 49, 50
 AREA,	432,	136,	gold,	1975,	 49, 60
 AREA,	290,	 50,	gold,	1974,	 45, 40
-AREA,	508,	210,	gold,	    ,	 49, 60
-LABEL,	513,	240,	        1972
+AREA,	635,	210,	gold,	    ,	 49, 60
+LABEL,	640,	240,	        1972
 AREA,	635,	461,	gold,	1971,	 97, 60
-LABEL,	513,	217,	        1969
+LABEL,	640,	217,	        1969
+AREA,	205,	98,	gold,	1965,	 49, 45
 
 # field markers, left to right
 LABEL,	475,	330,	G
@@ -55,9 +57,10 @@ LABEL,	925,	348,	10
 LABEL,	978,	360,	G
 
 # landmarks
-AREA,	536,	466,	gold,	DJ,	 47, 79
+AREA,	536,	425,	gold,	DJ,	 47, 79
 
 # map legend
-MAP_LEGEND, 20,	700,	Holy Cross Alumni Association
-MAP_NOTE,   45,	725,	Softball Tournament 2013
-MAP_NOTE,   45,	745,	Class Campsite Locations
+MAP_LEGEND, 20,	700,	
+LABEL,   75,	710,	Class Campsite Locations
+LABEL,   70,	735,	Softball Tournament 2013
+LABEL,	 60,	760,	Holy Cross Alumni Association
