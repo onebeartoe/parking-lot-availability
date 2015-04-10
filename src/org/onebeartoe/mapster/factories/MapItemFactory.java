@@ -1,7 +1,6 @@
 
 package org.onebeartoe.mapster.factories;
 
-import java.awt.Dimension;
 import java.awt.Point;
 import org.onebeartoe.mapster.items.MapItem;
 import org.onebeartoe.parking.lot.Classification;
@@ -11,7 +10,6 @@ import org.onebeartoe.parking.lot.Classification;
  */
 public abstract class MapItemFactory 
 {
-    
     /**
      * Set this value in sub-classes.
      */

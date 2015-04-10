@@ -56,7 +56,7 @@ public class ParkingSpotFactory extends MapItemFactory
     @Override
     public MapItem parseDetails(Classification classification, String [] strings) 
     {
-	String label = strings[3].trim();
+	String label = strings[4].trim();
 	
 	String s = strings[3].trim();
 	ParkingSpotClassification spotType = ParkingSpotClassification.valueOf(s);

@@ -62,8 +62,8 @@ public class ParkingLotAvailability extends Application
 	
 	factoryManager = new HardCodedMapItemFactoryManager();
 	
-	String defaultPath = "campsites.text";
-//	String defaultPath = "parking-spots.text";
+//	String defaultPath = "campsites.text";
+	String defaultPath = "parking-spots.text";
 	
 	String inpath = preferences.get("parking-spots-path", defaultPath);	
 	
@@ -118,8 +118,8 @@ public class ParkingLotAvailability extends Application
     @Override
     public void start(Stage primaryStage)
     {
-	String mapPath = "images/football-field-rotated.png";
-//	String mapPath = "images/parking-lot.png";
+//	String mapPath = "images/football-field-rotated.png";
+	String mapPath = "images/parking-lot.png";
 	
 	InputStream instream = ParkingLotAvailability.class.getResourceAsStream(mapPath);
 	Image image = new Image(instream);
