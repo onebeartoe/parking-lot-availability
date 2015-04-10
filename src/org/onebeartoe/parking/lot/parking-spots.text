@@ -12,7 +12,7 @@
 PARKING_SPOT, 791, 232,   AVAILABLE, 1
 PARKING_SPOT, 791, 252,   AVAILABLE, 1
 PARKING_SPOT, 791, 272,   AVAILABLE, 1
-PARKING_SPOT, 789, 290,   AVAILABLE, R
+PARKING_SPOT, 789, 290,   RAFFLE, R
 
 PARKING_SPOT, 653, 498,   AVAILABLE, 2
 PARKING_SPOT, 690, 502,   AVAILABLE, 2
@@ -142,12 +142,14 @@ PARKING_SPOT, 781, 412,       TAKEN,  -
 PARKING_SPOT, 781, 425,       TAKEN,  -
 
 # map legend
-MAP_LEGEND, 465, 25,      -
-LABEL,      485, 30,      Holy Cross Alumni Association 2015
-LABEL,      470, 60,      $75 - Sections 1 - 5
-LABEL,      470, 97,      $50 - Sections 6 - 9
+MAP_LEGEND, 475, 10,      -
+LABEL,      490, 15,      Holy Cross Alumni Association 2015
+LABEL,      485, 55,      $75 - Sections 1 - 5
+LABEL,      485, 80,      $50 - Sections 6 - 9
+LABEL,      485, 105,     $10 - Raffle Ticket
 
-PARKING_SPOT, 657, 48,    AVAILABLE, Available
-PARKING_SPOT, 657, 68,        TAKEN, Taken
-PARKING_SPOT, 657, 88,  UNAVAILABLE, Unavailable
-PARKING_SPOT, 657, 108,       POLLO, Pollo's Space
+PARKING_SPOT, 672, 38,    AVAILABLE, Available
+PARKING_SPOT, 672, 58,        TAKEN, Taken
+PARKING_SPOT, 672, 78,  UNAVAILABLE, Unavailable
+PARKING_SPOT, 672, 98,       RAFFLE, Raffle
+PARKING_SPOT, 672, 118,       POLLO, Pollo's Space

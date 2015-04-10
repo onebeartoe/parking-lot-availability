@@ -39,6 +39,11 @@ public class ParkingSpotFactory extends MapItemFactory
 		image = new ParkingSpotImage("000000");
 		break;
 	    }
+            case RAFFLE:
+            {
+                image = new ParkingSpotImage("0000ff");
+                break;
+            }
 	    case POLLO:
 	    {
 		image = new PolloSpot("AA00CC");

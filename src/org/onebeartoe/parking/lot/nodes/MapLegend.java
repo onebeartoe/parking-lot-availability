@@ -15,7 +15,7 @@ public class MapLegend extends MapItem
     public MapLegend(String heading)
     {
 	int width = 340;
-	int height = 105;
+	int height = 128;
 	
 	Rectangle legendBackground = new Rectangle(width, height);
 	legendBackground.setFill(Color.BEIGE);

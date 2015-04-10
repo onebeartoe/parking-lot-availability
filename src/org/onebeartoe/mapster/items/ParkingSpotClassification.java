@@ -7,8 +7,8 @@ package org.onebeartoe.mapster.items;
 public enum ParkingSpotClassification 
 {
     AVAILABLE,
-    TAKEN,
-    UNAVAILABLE,
-    POLLO
-    
+    TAKEN,    
+    POLLO,
+    RAFFLE,
+    UNAVAILABLE
 }
